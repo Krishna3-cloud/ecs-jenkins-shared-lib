@@ -15,7 +15,7 @@
  * @param is_wait : True if you want to wait until changes reflects completely
  * @param aws_cli : Pass the specific path (e.g. /usr/local/bin/aws) to aws cli. Default is aws.
  */
-def deploy(cluster, service, task_family, image, region, boolean is_wait = true, String awscli = "aws") {
+def deploy(cluster, service, task_family, memory_def, image, region, boolean is_wait = true, String awscli = "aws") {
     sh """
 
         OLD_TASK_DEF=\$(${awscli} ecs describe-task-definition \
@@ -35,6 +35,7 @@ def deploy(cluster, service, task_family, image, region, boolean is_wait = true,
 
         ${awscli} ecs register-task-definition \
                 --family ${task_family} \
+                --memory ${memory_def} \
                 --cli-input-json \
                 "\$(echo \$FINAL_TASK)" --region "${region}"
 
