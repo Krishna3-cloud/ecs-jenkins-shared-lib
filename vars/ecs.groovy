@@ -5,16 +5,16 @@
  * Maintained and developed by @vikramjakhr
  */
 
-
- /* Deploy a task to specified service on the ecs cluster with task_family and image. */
-  @param cluster : "default"
-  @param service : "demo.service"
-  @param task_family : "first_run_task_definition"
-  @param image : "nginx:latest"
-  @param region : "us-east-1"
-  @param is_wait : True if you want to wait until changes reflects completely
-  @param aws_cli : Pass the specific path (e.g. /usr/local/bin/aws) to aws cli. Default is aws.
- 
+/**
+ * Deploy a task to specified service on the ecs cluster with task_family and image.
+ * @param cluster : ECS cluster name
+ * @param service : ECS cluster service name
+ * @param task_family : Task family to update
+ * @param image : Image to deploy
+ * @param region : AWS region
+ * @param is_wait : True if you want to wait until changes reflects completely
+ * @param aws_cli : Pass the specific path (e.g. /usr/local/bin/aws) to aws cli. Default is aws.
+ */
 def deploy(cluster, service, task_family, image, region, boolean is_wait = true, String awscli = "aws") {
     sh """
 
