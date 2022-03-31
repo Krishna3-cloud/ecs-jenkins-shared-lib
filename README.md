@@ -34,12 +34,11 @@ Manage Jenkins -> Configure System
 * Now specify the github account and repository details
     * Credentials (any github user credential, required because github has pull request limits for
       annonymous users.
-    * Specify owner as vikramjakhr  
+    * Specify owner as krishnapal 
     * Select the ecs-jenkins-lib from the dropdown
 * Leave remaining options as it is.
 ```
 
-![screenshot](https://raw.githubusercontent.com/vikramjakhr/ecs-jenkins-lib/master/slc.png)
 
 ### Using the library in pipeline
 
@@ -131,10 +130,4 @@ stage('Wait') {
 
 You are welcome to contribute!
 
-## Versioning
 
-For the versions available, see the [tags on this repository](https://github.com/vikramjakhr/ecs-jenkins-lib/tags). 
-
-## Authors
-
-* **Vikram Jakhar** - *Initial work* - [vikramjakhr](https://github.com/vikramjakhr)
