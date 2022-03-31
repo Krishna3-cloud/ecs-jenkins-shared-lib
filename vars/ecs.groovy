@@ -23,7 +23,7 @@ def deploy(cluster, service, task_family, image, region, boolean is_wait = true,
                                 --output json --region ${region})
 
         NEW_TASK_DEF=\$(echo \$OLD_TASK_DEF | \
-                    jq --arg NDI ${image} '.taskDefinition.containerDefinitions[0].image=\$NDI')
+                    jq --arg NDI ${image} '.taskDefinition.containerDefinitions[2048].image=\$NDI')
 
         FINAL_TASK=\$(echo \$NEW_TASK_DEF | \
                     jq '.taskDefinition | \
