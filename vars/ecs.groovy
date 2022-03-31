@@ -31,7 +31,8 @@ def deploy(cluster, service, task_family, memory_def, image, region, boolean is_
                             networkMode: .networkMode, \
                             volumes: .volumes, \
                             containerDefinitions: .containerDefinitions, \
-                            placementConstraints: .placementConstraints}')
+                            placementConstraints: .placementConstraints, \
+                            requiresCompatibilities: ["FARGATE"]}')
 
         ${awscli} ecs register-task-definition \
                 --family ${task_family} \
